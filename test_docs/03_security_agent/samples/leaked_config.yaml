@@ -1,0 +1,15 @@
+# service config committed to the repo
+server:
+  host: "0.0.0.0"
+  port: 8080
+  debug: true
+database:
+  url: "postgres://app:Sup3rS3cret!@db.internal:5432/orders"
+payments:
+  api_key: "sk_live_51HxQ2eK8vT0pM3nR"
+  base_url: "http://api.payments.example/v2"
+tls:
+  verify: false
+cors:
+  allow_origins: ["*"]
+  allow_credentials: true

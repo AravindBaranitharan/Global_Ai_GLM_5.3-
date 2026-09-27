@@ -1,0 +1,12 @@
+# Access groups per folder, with per-file overrides. Unlisted paths are visible to nobody (fail closed).
+folders:
+  hr: [hr]
+  finance: [finance]
+  engineering: [engineering]
+  legal: [legal]
+  tamil: [all]
+  general: [all]
+  poisoned: [all]
+files:
+  hr/leave_policy.pdf: [hr, all]
+  hr/travel_policy.pdf: [hr, all]

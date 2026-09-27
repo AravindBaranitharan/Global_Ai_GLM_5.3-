@@ -1,0 +1,3 @@
+# Uploaded domain documents are readable by every signed-in user.
+folders:
+  uploads: [all]

@@ -1,0 +1,129 @@
+@import "@fontsource-variable/inter/index.css";
+@import "@fontsource/jetbrains-mono/400.css";
+@import "@fontsource/noto-sans-tamil/400.css";
+@import "@fontsource/noto-sans-devanagari/400.css";
+@import "@fontsource/noto-sans-telugu/400.css";
+@import "@fontsource/noto-sans-kannada/400.css";
+@import "@fontsource/noto-sans-malayalam/400.css";
+@import "@fontsource/noto-sans-bengali/400.css";
+@import "tailwindcss";
+
+/* Tokens from the supplied design system: near-black canvas, electric yellow as the only brand colour. */
+@theme {
+  --color-*: initial;
+  --color-primary: #faff69;
+  --color-primary-active: #e6eb52;
+  --color-primary-disabled: #3a3a1f;
+  --color-ink: #ffffff;
+  --color-body: #cccccc;
+  --color-body-strong: #e6e6e6;
+  --color-muted: #888888;
+  --color-muted-soft: #5a5a5a;
+  --color-hairline: #2a2a2a;
+  --color-hairline-strong: #3a3a3a;
+  --color-canvas: #0a0a0a;
+  --color-surface-soft: #121212;
+  --color-surface-card: #1a1a1a;
+  --color-surface-elevated: #242424;
+  --color-on-primary: #0a0a0a;
+  --color-emerald: #22c55e;
+  --color-rose: #ef4444;
+  --color-blue: #3b82f6;
+  --color-warning: #f59e0b;
+  --color-transparent: transparent;
+
+  --font-sans: "Inter Variable", "Noto Sans Tamil", "Noto Sans Devanagari", "Noto Sans Telugu", "Noto Sans Kannada", "Noto Sans Malayalam", "Noto Sans Bengali", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", "Noto Sans Tamil", "Noto Sans Devanagari", "Noto Sans Telugu", "Noto Sans Kannada", "Noto Sans Malayalam", "Noto Sans Bengali", ui-monospace, monospace;
+
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  --ease-snap: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@layer base {
+  html, body, #root { height: 100%; }
+  body {
+    background: var(--color-canvas);
+    color: var(--color-body);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+  ::selection { background: var(--color-primary); color: var(--color-on-primary); }
+  :focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; border-radius: 6px; }
+  button { cursor: pointer; }
+  button:disabled { cursor: default; }
+  * { scrollbar-width: thin; scrollbar-color: var(--color-hairline-strong) transparent; }
+}
+
+/* Type scale: Inter 700 with negative tracking for display; 400 body. */
+@utility t-display-xl { font-size: clamp(40px, 5.2vw, 72px); font-weight: 700; line-height: 1.05; letter-spacing: -2.5px; }
+@utility t-display-lg { font-size: clamp(34px, 4vw, 56px); font-weight: 700; line-height: 1.1; letter-spacing: -2px; }
+@utility t-display-md { font-size: clamp(28px, 3vw, 40px); font-weight: 700; line-height: 1.15; letter-spacing: -1.5px; }
+@utility t-display-sm { font-size: 32px; font-weight: 700; line-height: 1.2; letter-spacing: -1px; }
+@utility t-title-lg { font-size: 24px; font-weight: 700; line-height: 1.3; letter-spacing: -0.3px; }
+@utility t-title-md { font-size: 18px; font-weight: 600; line-height: 1.4; }
+@utility t-title-sm { font-size: 16px; font-weight: 600; line-height: 1.4; }
+@utility t-stat { font-size: clamp(40px, 4vw, 56px); font-weight: 700; line-height: 1; letter-spacing: -1.5px; color: var(--color-primary); font-variant-numeric: tabular-nums; }
+@utility t-body-md { font-size: 17px; font-weight: 400; line-height: 1.6; }
+@utility t-body-sm { font-size: 14px; font-weight: 400; line-height: 1.55; }
+@utility t-caption { font-size: 13px; font-weight: 500; line-height: 1.4; }
+@utility t-label { font-size: 12px; font-weight: 600; line-height: 1.4; letter-spacing: 1.5px; text-transform: uppercase; }
+@utility t-code { font-family: var(--font-mono); font-size: 13.5px; font-weight: 400; line-height: 1.7; }
+@utility t-nav { font-size: 14px; font-weight: 500; line-height: 1.4; }
+
+/* Indian scripts: no negative tracking (it breaks conjuncts) and taller lines for stacked marks. */
+:lang(ta), :lang(hi), :lang(te), :lang(kn), :lang(ml), :lang(bn) { letter-spacing: 0 !important; }
+:is(:lang(ta), :lang(hi), :lang(te), :lang(kn), :lang(ml), :lang(bn)):is(.t-body-md),
+:is(:lang(ta), :lang(hi), :lang(te), :lang(kn), :lang(ml), :lang(bn)) .t-body-md { line-height: 1.85; }
+
+@layer components {
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px; white-space: nowrap;
+    height: 40px; padding: 0 20px; border-radius: var(--radius-md);
+    font-size: 14px; font-weight: 600; line-height: 1;
+    transition: background-color .15s var(--ease-snap), color .15s, transform .1s;
+  }
+  .btn:active:not(:disabled) { transform: translateY(1px); }
+  .btn-primary { background: var(--color-primary); color: var(--color-on-primary); }
+  .btn-primary:active:not(:disabled) { background: var(--color-primary-active); }
+  .btn-primary:disabled { background: var(--color-primary-disabled); color: var(--color-muted); }
+  .btn-secondary { background: var(--color-surface-card); color: var(--color-ink); border: 1px solid var(--color-hairline); }
+  .btn-secondary:active:not(:disabled) { background: var(--color-surface-elevated); }
+  .btn-secondary:disabled { color: var(--color-muted-soft); }
+  .btn-sm { height: 32px; padding: 0 12px; font-size: 13px; border-radius: var(--radius-sm); }
+  .btn-icon { width: 36px; height: 36px; padding: 0; border-radius: 9999px; }
+
+  .card { background: var(--color-surface-card); border: 1px solid var(--color-hairline); border-radius: var(--radius-lg); }
+
+  .badge { display: inline-flex; align-items: center; gap: 6px; height: 24px; padding: 0 10px; border-radius: 9999px;
+    background: var(--color-surface-elevated); color: var(--color-ink); font-size: 12px; font-weight: 500; white-space: nowrap; }
+  .badge-yellow { background: var(--color-primary); color: var(--color-on-primary); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; font-size: 11px; }
+
+  .tab { padding: 8px 14px; border-radius: var(--radius-md); color: var(--color-muted); font-size: 14px; font-weight: 500; transition: color .15s; }
+  .tab[aria-current="page"], .tab[aria-pressed="true"], .tab[aria-selected="true"] { color: var(--color-ink); }
+
+  .field { height: 48px; width: 100%; border-radius: var(--radius-md); background: var(--color-surface-card);
+    border: 1px solid var(--color-hairline); color: var(--color-ink); padding: 0 14px; font-size: 16px; outline: none;
+    transition: border-color .15s; }
+  .field::placeholder { color: var(--color-muted); }
+  .field:focus { border-color: var(--color-primary); }
+}
+
+/* Slow drift for the page wall behind an empty source panel. */
+@keyframes drift { from { transform: translateY(0); } to { transform: translateY(-50%); } }
+.animate-drift { animation: drift 140s linear infinite; }
+@keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+.animate-blink { animation: blink 1s step-end infinite; }
+@keyframes pulse-dot { 0%, 100% { opacity: .4; } 50% { opacity: 1; } }
+.animate-pulse-dot { animation: pulse-dot 1.8s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-drift, .animate-blink, .animate-pulse-dot { animation: none; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}

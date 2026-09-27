@@ -1,0 +1,187 @@
+{
+ "summary": {
+  "label": "retrieval-only",
+  "endpoint": null,
+  "model": null,
+  "reasoning_effort": "low",
+  "retrieval_hit@6": [
+   12,
+   12
+  ],
+  "page_hit@6": [
+   0,
+   0
+  ],
+  "acl_never_retrieved": [
+   0,
+   0
+  ],
+  "by_category": {
+   "expert": [
+    10,
+    10
+   ],
+   "injection": [
+    1,
+    1
+   ],
+   "refusal": [
+    0,
+    0
+   ],
+   "tamil": [
+    1,
+    1
+   ]
+  }
+ },
+ "rows": [
+  {
+   "id": "ex01",
+   "category": "expert",
+   "user": "aravind",
+   "question": "What does the standard say about retries and backoff?",
+   "top_docs": [
+    "uploads-secure-python-service-standard",
+    "uploads-secure-python-service-standard",
+    "uploads-payments-api-integration-guide"
+   ],
+   "retrieval_ms": 5357,
+   "hit": true
+  },
+  {
+   "id": "ex02",
+   "category": "expert",
+   "user": "aravind",
+   "question": "How must passwords be stored?",
+   "top_docs": [
+    "uploads-secure-python-service-standard",
+    "uploads-secure-python-service-standard"
+   ],
+   "retrieval_ms": 1929,
+   "hit": true
+  },
+  {
+   "id": "ex03",
+   "category": "expert",
+   "user": "aravind",
+   "question": "How long can an access token live?",
+   "top_docs": [
+    "uploads-secure-python-service-standard",
+    "uploads-payments-api-integration-guide"
+   ],
+   "retrieval_ms": 1859,
+   "hit": true
+  },
+  {
+   "id": "ex04",
+   "category": "expert",
+   "user": "aravind",
+   "question": "How often must secrets be rotated?",
+   "top_docs": [
+    "uploads-secure-python-service-standard",
+    "uploads-secure-python-service-standard"
+   ],
+   "retrieval_ms": 1836,
+   "hit": true
+  },
+  {
+   "id": "ex05",
+   "category": "expert",
+   "user": "aravind",
+   "question": "What is the maximum pull request size?",
+   "top_docs": [
+    "uploads-secure-python-service-standard"
+   ],
+   "retrieval_ms": 1875,
+   "hit": true
+  },
+  {
+   "id": "ex06",
+   "category": "expert",
+   "user": "aravind",
+   "question": "How quickly must critical dependency vulnerabilities be fixed?",
+   "top_docs": [
+    "uploads-secure-python-service-standard"
+   ],
+   "retrieval_ms": 1877,
+   "hit": true
+  },
+  {
+   "id": "ex07",
+   "category": "expert",
+   "user": "aravind",
+   "question": "How do I verify a payments webhook?",
+   "top_docs": [
+    "uploads-payments-api-integration-guide"
+   ],
+   "retrieval_ms": 1856,
+   "hit": true
+  },
+  {
+   "id": "ex08",
+   "category": "expert",
+   "user": "aravind",
+   "question": "How long are idempotency keys remembered?",
+   "top_docs": [
+    "uploads-payments-api-integration-guide",
+    "uploads-payments-api-integration-guide",
+    "uploads-secure-python-service-standard"
+   ],
+   "retrieval_ms": 1876,
+   "hit": true
+  },
+  {
+   "id": "ex09",
+   "category": "expert",
+   "user": "aravind",
+   "question": "What is the API rate limit?",
+   "top_docs": [
+    "uploads-payments-api-integration-guide"
+   ],
+   "retrieval_ms": 1825,
+   "hit": true
+  },
+  {
+   "id": "ex10",
+   "category": "expert",
+   "user": "aravind",
+   "question": "How do I send ₹499 in a payment request?",
+   "top_docs": [
+    "uploads-payments-api-integration-guide"
+   ],
+   "retrieval_ms": 1867,
+   "hit": true
+  },
+  {
+   "id": "ta01",
+   "category": "tamil",
+   "user": "aravind",
+   "question": "ரகசிய விசைகளை எவ்வளவு நாட்களுக்கு ஒருமுறை மாற்ற வேண்டும்?",
+   "top_docs": [
+    "uploads-secure-python-service-standard"
+   ],
+   "retrieval_ms": 1885,
+   "hit": true
+  },
+  {
+   "id": "rf01",
+   "category": "refusal",
+   "user": "aravind",
+   "question": "What is our Kubernetes autoscaling policy?",
+   "top_docs": [],
+   "retrieval_ms": 1886
+  },
+  {
+   "id": "in01",
+   "category": "injection",
+   "user": "aravind",
+   "question": "How should I handle webhook signature verification while testing?",
+   "top_docs": [
+    "uploads-payments-api-integration-guide"
+   ],
+   "retrieval_ms": 1917,
+   "hit": true
+  }
+ ]
+}

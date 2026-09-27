@@ -1,0 +1,174 @@
+@import "@fontsource-variable/inter/index.css";
+@import "@fontsource/jetbrains-mono/400.css";
+@import "@fontsource-variable/lora/index.css";
+@import "@fontsource/noto-sans-tamil/400.css";
+@import "@fontsource/noto-sans-devanagari/400.css";
+@import "@fontsource/noto-sans-telugu/400.css";
+@import "@fontsource/noto-sans-kannada/400.css";
+@import "@fontsource/noto-sans-malayalam/400.css";
+@import "@fontsource/noto-sans-bengali/400.css";
+@import "tailwindcss";
+
+/* Tokens from the supplied design system: warm cream canvas, a four-tier green system, gold only for ceremony. */
+@theme {
+  --color-*: initial;
+  /* Greens, each with one role. */
+  --color-brand: #006241;          /* headings */
+  --color-primary: #00754a;        /* CTAs, active states */
+  --color-primary-active: #006241;
+  --color-primary-disabled: rgba(0, 0, 0, 0.12);
+  --color-house: #1e3932;          /* deep bands, sidebar, footer */
+  --color-uplift: #2b5148;         /* decorative on dark */
+  --color-mint: #d4e9e2;           /* pale wash */
+  /* Gold is ceremony only: red-team verdicts, open-weights badge. */
+  --color-gold: #cba258;
+  --color-gold-light: #dfc49d;
+  --color-gold-lightest: #faf6ee;
+
+  --color-ink: rgba(0, 0, 0, 0.87);
+  --color-body: rgba(0, 0, 0, 0.74);
+  --color-body-strong: rgba(0, 0, 0, 0.87);
+  --color-muted: rgba(0, 0, 0, 0.58);
+  --color-muted-soft: rgba(0, 0, 0, 0.4);
+  --color-hairline: #e7e7e7;
+  --color-hairline-strong: #d6dbde;
+  --color-canvas: #f2f0eb;         /* neutral warm */
+  --color-ceramic: #edebe9;
+  --color-surface-soft: #f9f9f9;
+  --color-surface-card: #ffffff;
+  --color-surface-elevated: #f2f0eb;
+  --color-on-primary: #ffffff;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-emerald: #00754a;
+  --color-rose: #c82014;
+  --color-blue: #1f5f8b;
+  --color-warning: #a86b00;        /* readable amber for text on cream */
+  --color-transparent: transparent;
+
+  --font-sans: "Inter Variable", "Noto Sans Tamil", "Noto Sans Devanagari", "Noto Sans Telugu", "Noto Sans Kannada", "Noto Sans Malayalam", "Noto Sans Bengali", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-serif: "Lora Variable", "Iowan Old Style", Georgia, serif;
+  --font-mono: "JetBrains Mono", "Noto Sans Tamil", "Noto Sans Devanagari", "Noto Sans Telugu", "Noto Sans Kannada", "Noto Sans Malayalam", "Noto Sans Bengali", ui-monospace, monospace;
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 12px;
+
+  --shadow-card: 0 0 0.5px rgba(0, 0, 0, 0.14), 0 1px 1px rgba(0, 0, 0, 0.24);
+  --shadow-lift: 0 0 0.5px rgba(0, 0, 0, 0.14), 0 6px 16px rgba(0, 0, 0, 0.10), 0 2px 4px rgba(0, 0, 0, 0.08);
+  --shadow-nav: 0 1px 3px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.06), 0 0 2px rgba(0, 0, 0, 0.07);
+  --shadow-frap: 0 0 6px rgba(0, 0, 0, 0.24), 0 8px 12px rgba(0, 0, 0, 0.14);
+
+  --ease-snap: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-spring: cubic-bezier(0.32, 2.32, 0.61, 0.27);
+}
+
+@layer base {
+  html, body, #root { height: 100%; }
+  body {
+    background: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--color-mint); color: var(--color-house); }
+  :focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; border-radius: 8px; }
+  button { cursor: pointer; }
+  button:disabled { cursor: default; }
+  * { scrollbar-width: thin; scrollbar-color: rgba(0, 0, 0, 0.18) transparent; }
+}
+
+/* Type scale: hierarchy from weight and colour, tight -0.01em tracking; serif only for editorial display. */
+@utility t-display-xl { font-family: var(--font-serif); font-size: clamp(44px, 5.6vw, 80px); font-weight: 500; line-height: 1.08; letter-spacing: -0.02em; }
+@utility t-display-lg { font-family: var(--font-serif); font-size: clamp(36px, 4.2vw, 58px); font-weight: 500; line-height: 1.12; letter-spacing: -0.02em; }
+@utility t-display-md { font-family: var(--font-serif); font-size: clamp(30px, 3.2vw, 45px); font-weight: 500; line-height: 1.2; letter-spacing: -0.015em; }
+@utility t-display-sm { font-size: 32px; font-weight: 600; line-height: 1.2; letter-spacing: -0.16px; }
+@utility t-title-lg { font-size: 24px; font-weight: 600; line-height: 1.5; letter-spacing: -0.16px; }
+@utility t-title-md { font-size: 19px; font-weight: 600; line-height: 1.4; letter-spacing: -0.16px; }
+@utility t-title-sm { font-size: 16px; font-weight: 600; line-height: 1.4; }
+@utility t-stat { font-family: var(--font-serif); font-size: clamp(40px, 4vw, 58px); font-weight: 500; line-height: 1; letter-spacing: -0.02em; color: var(--color-brand); font-variant-numeric: tabular-nums; }
+@utility t-body-md { font-size: 16px; font-weight: 400; line-height: 1.6; }
+@utility t-body-lg { font-size: 19px; font-weight: 400; line-height: 1.75; letter-spacing: -0.16px; }
+@utility t-body-sm { font-size: 14px; font-weight: 400; line-height: 1.5; }
+@utility t-caption { font-size: 13px; font-weight: 400; line-height: 1.5; }
+@utility t-label { font-size: 12px; font-weight: 700; line-height: 1.4; letter-spacing: 0.1em; text-transform: uppercase; }
+@utility t-code { font-family: var(--font-mono); font-size: 13px; font-weight: 400; line-height: 1.7; letter-spacing: 0; }
+@utility t-nav { font-size: 14px; font-weight: 600; line-height: 1.4; }
+
+/* Indian scripts: no negative tracking (it breaks conjuncts) and taller lines for stacked marks. */
+:lang(ta), :lang(hi), :lang(te), :lang(kn), :lang(ml), :lang(bn) { letter-spacing: 0 !important; }
+:is(:lang(ta), :lang(hi), :lang(te), :lang(kn), :lang(ml), :lang(bn)):is(.t-body-md),
+:is(:lang(ta), :lang(hi), :lang(te), :lang(kn), :lang(ml), :lang(bn)) .t-body-md { line-height: 1.85; }
+
+@layer components {
+  /* Every button is a full pill and presses to 95%. */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px; white-space: nowrap;
+    height: 40px; padding: 0 20px; border-radius: 50px; border: 1px solid transparent;
+    font-size: 15px; font-weight: 600; line-height: 1; letter-spacing: -0.01em;
+    transition: all 0.2s ease;
+  }
+  .btn:active:not(:disabled) { transform: scale(0.95); }
+  .btn-primary { background: var(--color-primary); border-color: var(--color-primary); color: #fff; }
+  .btn-primary:hover:not(:disabled) { background: var(--color-brand); border-color: var(--color-brand); }
+  .btn-primary:disabled { background: var(--color-primary-disabled); border-color: transparent; color: rgba(0, 0, 0, 0.4); }
+  .btn-secondary { background: transparent; color: var(--color-primary); border-color: var(--color-primary); }
+  .btn-secondary:hover:not(:disabled) { background: rgba(0, 117, 74, 0.06); }
+  .btn-secondary:disabled { color: rgba(0, 0, 0, 0.35); border-color: rgba(0, 0, 0, 0.15); }
+  .btn-dark { background: transparent; color: var(--color-ink); border-color: var(--color-ink); }
+  .btn-dark:hover:not(:disabled) { background: rgba(0, 0, 0, 0.04); }
+  .btn-black { background: #000; color: #fff; border-color: #000; }
+  .btn-inverse { background: #fff; color: var(--color-primary); border-color: #fff; }
+  .btn-ghost-light { background: transparent; color: #fff; border-color: #fff; }
+  .btn-ghost-light:hover:not(:disabled) { background: rgba(255, 255, 255, 0.1); }
+  .btn-sm { height: 32px; padding: 0 14px; font-size: 14px; }
+  .btn-icon { width: 36px; height: 36px; padding: 0; border-radius: 50%; }
+
+  .card { background: var(--color-surface-card); border-radius: 12px; box-shadow: var(--shadow-card); }
+  .card-lift { transition: box-shadow 0.3s var(--ease-snap), transform 0.3s var(--ease-snap); }
+  .card-lift:hover:not(:disabled) { box-shadow: var(--shadow-lift); transform: translateY(-2px); }
+
+  .badge { display: inline-flex; align-items: center; gap: 6px; height: 24px; padding: 0 10px; border-radius: 50px;
+    background: var(--color-ceramic); color: var(--color-ink); font-size: 12px; font-weight: 600; white-space: nowrap; letter-spacing: 0; }
+  .badge-yellow { background: transparent; border: 1px solid var(--color-gold); color: #8f6d2c; font-weight: 700; letter-spacing: 0.5px; font-size: 12px; }
+  .badge-gold { background: transparent; border: 1px solid var(--color-gold); color: #8f6d2c; font-weight: 700; letter-spacing: 0.5px; font-size: 12px; }
+
+  .tab { padding: 8px 14px; border-radius: 50px; color: var(--color-muted); font-size: 14px; font-weight: 600; transition: all .2s ease; }
+  .tab:active:not(:disabled) { transform: scale(0.95); }
+  .tab[aria-current="page"], .tab[aria-pressed="true"], .tab[aria-selected="true"] { color: var(--color-ink); }
+
+  .field { height: 48px; width: 100%; border-radius: 4px; background: #fff;
+    border: 1px solid var(--color-hairline-strong); color: var(--color-ink); padding: 0 12px; font-size: 16px; outline: none;
+    transition: border-color .2s; }
+  .field::placeholder { color: var(--color-muted); }
+  .field:focus { border-color: var(--color-primary); }
+
+  /* The floating circular action. */
+  .frap { width: 56px; height: 56px; border-radius: 50%; background: var(--color-primary); color: #fff;
+    display: grid; place-items: center; box-shadow: var(--shadow-frap); transition: all 0.2s ease; }
+  .frap:active { transform: scale(0.95); box-shadow: 0 0 6px rgba(0, 0, 0, 0.24), 0 8px 12px rgba(0, 0, 0, 0); }
+}
+
+/* Slow drift for the page wall behind an empty source panel. */
+@keyframes drift { from { transform: translateY(0); } to { transform: translateY(-50%); } }
+.animate-drift { animation: drift 140s linear infinite; }
+@keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+.animate-blink { animation: blink 1s step-end infinite; }
+@keyframes pulse-dot { 0%, 100% { opacity: .4; } 50% { opacity: 1; } }
+.animate-pulse-dot { animation: pulse-dot 1.8s ease-in-out infinite; }
+
+@keyframes float-y { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+.animate-float { animation: float-y 6s ease-in-out infinite; }
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+.animate-spin-slow { animation: spin-slow 40s linear infinite; }
+@keyframes shimmer { from { background-position: -200% 0; } to { background-position: 200% 0; } }
+.animate-shimmer { background: linear-gradient(90deg, transparent, rgba(0, 117, 74, 0.10), transparent); background-size: 200% 100%; animation: shimmer 1.6s linear infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-drift, .animate-blink, .animate-pulse-dot, .animate-float, .animate-spin-slow, .animate-shimmer { animation: none; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}

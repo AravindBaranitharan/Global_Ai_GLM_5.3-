@@ -1,0 +1,165 @@
+@import "@fontsource-variable/inter/index.css";
+@import "@fontsource/jetbrains-mono/400.css";
+@import "@fontsource/geist-mono/400.css";
+@import "@fontsource/noto-sans-tamil/400.css";
+@import "@fontsource/noto-sans-devanagari/400.css";
+@import "@fontsource/noto-sans-telugu/400.css";
+@import "@fontsource/noto-sans-kannada/400.css";
+@import "@fontsource/noto-sans-malayalam/400.css";
+@import "@fontsource/noto-sans-bengali/400.css";
+@import "tailwindcss";
+
+/* Tokens from the supplied design system: near-black canvas, white outline pills, weight 400 everywhere,
+   mono uppercase labels, hairline borders instead of shadows. Accents live in illustration only. */
+@theme {
+  --color-*: initial;
+  --color-primary: #ffffff;
+  --color-on-primary: #0a0a0a;
+  --color-ink: #ffffff;
+  --color-body: #dadbdf;
+  --color-body-strong: #f2f2f2;
+  --color-muted: #7d8187;
+  --color-muted-soft: #5a5e64;
+  --color-hairline: #212327;
+  --color-hairline-strong: #2e3136;
+  --color-line-light: rgba(255, 255, 255, 0.25);   /* outline pill border */
+  --color-canvas: #0a0a0a;
+  --color-surface-soft: #1a1c20;
+  --color-surface-card: #191919;
+  --color-surface-elevated: #1a1c20;
+  --color-surface-mid: #363a3f;
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Illustrative accents. */
+  --color-sunset: #ff7a17;
+  --color-sunset-soft: #ffc285;
+  --color-dusk: #7c3aed;
+  --color-twilight: #c4b5fd;
+  --color-breeze: #a0c3ec;
+  --color-midnight: #0d1726;
+
+  /* Status, drawn from the accent palette so it stays in key. */
+  --color-emerald: #86e0a8;
+  --color-rose: #ff7a17;
+  --color-warning: #ffc285;
+  --color-blue: #a0c3ec;
+  --color-transparent: transparent;
+
+  --font-sans: "Inter Variable", "Noto Sans Tamil", "Noto Sans Devanagari", "Noto Sans Telugu", "Noto Sans Kannada", "Noto Sans Malayalam", "Noto Sans Bengali", system-ui, -apple-system, sans-serif;
+  --font-mono: "Geist Mono", "JetBrains Mono", "Noto Sans Tamil", "Noto Sans Devanagari", "Noto Sans Telugu", "Noto Sans Kannada", "Noto Sans Malayalam", "Noto Sans Bengali", ui-monospace, monospace;
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 8px;
+  --radius-lg: 8px;
+
+  --ease-snap: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html, body, #root { height: 100%; }
+  body {
+    background: var(--color-canvas);
+    color: var(--color-body);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+  ::selection { background: #ffffff; color: #0a0a0a; }
+  :focus-visible { outline: 1px solid #ffffff; outline-offset: 3px; border-radius: 9999px; }
+  button { cursor: pointer; }
+  button:disabled { cursor: default; }
+  strong, b { font-weight: 500; }
+  * { scrollbar-width: thin; scrollbar-color: #2e3136 transparent; }
+}
+
+/* Type: weight 400 throughout, hierarchy by size and tight tracking; mono uppercase for labels. */
+@utility t-display-xl { font-size: clamp(48px, 7vw, 96px); font-weight: 400; line-height: 1; letter-spacing: -0.025em; }
+@utility t-display-lg { font-size: clamp(40px, 5.2vw, 72px); font-weight: 400; line-height: 1; letter-spacing: -0.025em; }
+@utility t-display-md { font-size: clamp(32px, 3.6vw, 48px); font-weight: 400; line-height: 1.05; letter-spacing: -0.025em; }
+@utility t-display-sm { font-size: 32px; font-weight: 400; line-height: 36px; letter-spacing: -0.6px; }
+@utility t-title-lg { font-size: 24px; font-weight: 400; line-height: 1.3; letter-spacing: -0.4px; }
+@utility t-title-md { font-size: 20px; font-weight: 400; line-height: 28px; letter-spacing: -0.2px; }
+@utility t-title-sm { font-size: 16px; font-weight: 500; line-height: 1.4; }
+@utility t-stat { font-size: clamp(40px, 4vw, 56px); font-weight: 400; line-height: 1; letter-spacing: -0.03em; color: #ffffff; font-variant-numeric: tabular-nums; }
+@utility t-body-lg { font-size: 18px; font-weight: 400; line-height: 28px; }
+@utility t-body-md { font-size: 16px; font-weight: 400; line-height: 1.65; }
+@utility t-body-sm { font-size: 14px; font-weight: 400; line-height: 20px; }
+@utility t-caption { font-size: 13px; font-weight: 400; line-height: 1.45; }
+@utility t-label { font-family: var(--font-mono); font-size: 12px; font-weight: 400; line-height: 16px; letter-spacing: 1.2px; text-transform: uppercase; }
+@utility t-eyebrow { font-family: var(--font-mono); font-size: 14px; font-weight: 400; line-height: 20px; letter-spacing: 1.4px; text-transform: uppercase; }
+@utility t-code { font-family: var(--font-mono); font-size: 13px; font-weight: 400; line-height: 1.7; }
+@utility t-nav { font-size: 14px; font-weight: 400; line-height: 20px; }
+
+/* Indian scripts: no negative tracking (it breaks conjuncts) and taller lines for stacked marks. */
+:lang(ta), :lang(hi), :lang(te), :lang(kn), :lang(ml), :lang(bn) { letter-spacing: 0 !important; }
+:is(:lang(ta), :lang(hi), :lang(te), :lang(kn), :lang(ml), :lang(bn)):is(.t-body-md),
+:is(:lang(ta), :lang(hi), :lang(te), :lang(kn), :lang(ml), :lang(bn)) .t-body-md { line-height: 1.85; }
+
+@layer components {
+  /* The pill is the whole shape system. Outline by default; the white fill is rare. */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px; white-space: nowrap;
+    height: 40px; padding: 0 18px; border-radius: 9999px; border: 1px solid var(--color-line-light);
+    background: transparent; color: #fff; font-size: 14px; font-weight: 400; line-height: 20px;
+    transition: background-color .2s var(--ease-snap), border-color .2s, color .2s, transform .15s;
+  }
+  .btn:hover:not(:disabled) { border-color: rgba(255, 255, 255, 0.6); background: rgba(255, 255, 255, 0.04); }
+  .btn:active:not(:disabled) { transform: scale(0.97); }
+  .btn:disabled { color: var(--color-muted-soft); border-color: var(--color-hairline); }
+  .btn-primary { background: #fff; color: #0a0a0a; border-color: #fff; }
+  .btn-primary:hover:not(:disabled) { background: #e8e8e6; border-color: #e8e8e6; }
+  .btn-primary:disabled { background: var(--color-surface-mid); border-color: var(--color-surface-mid); color: var(--color-muted); }
+  .btn-secondary { }
+  .btn-sm { height: 32px; padding: 0 12px; font-size: 13px; }
+  .btn-icon { width: 36px; height: 36px; padding: 0; }
+
+  .card { background: var(--color-surface-card); border: 1px solid var(--color-hairline); border-radius: 8px; }
+  .card-hover { transition: border-color .25s var(--ease-snap), background-color .25s; }
+  .card-hover:hover:not(:disabled) { border-color: #3a3d42; background: #1c1c1c; }
+
+  .badge { display: inline-flex; align-items: center; gap: 6px; height: 24px; padding: 0 10px; border-radius: 9999px;
+    border: 1px solid var(--color-hairline-strong); color: var(--color-body); font-size: 12px; font-weight: 400; white-space: nowrap; }
+  .badge-mono { font-family: var(--font-mono); letter-spacing: 1.2px; text-transform: uppercase; font-size: 11px; }
+
+  .tab { padding: 6px 14px; border-radius: 9999px; border: 1px solid transparent; color: var(--color-muted); font-size: 14px; transition: all .2s; }
+  .tab[aria-current="page"], .tab[aria-pressed="true"], .tab[aria-selected="true"], .tab[aria-checked="true"] { color: #fff; border-color: var(--color-line-light); }
+
+  .field { height: 48px; width: 100%; border-radius: 8px; background: var(--color-surface-soft);
+    border: 1px solid var(--color-hairline); color: #fff; padding: 0 16px; font-size: 16px; outline: none; transition: border-color .2s; }
+  .field::placeholder { color: var(--color-muted); }
+  .field:focus { border-color: var(--color-line-light); }
+}
+
+@keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+.animate-blink { animation: blink 1s step-end infinite; }
+@keyframes pulse-dot { 0%, 100% { opacity: .35; } 50% { opacity: 1; } }
+.animate-pulse-dot { animation: pulse-dot 1.8s ease-in-out infinite; }
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+.animate-spin-slow { animation: spin-slow 90s linear infinite; }
+@keyframes twinkle { 0%, 100% { opacity: .15; } 50% { opacity: .8; } }
+.animate-twinkle { animation: twinkle 4s ease-in-out infinite; }
+/* Math: display formulas scroll sideways on narrow screens instead of overflowing. */
+.math-block { overflow-x: auto; overflow-y: hidden; padding: 6px 2px; margin: 2px 0; }
+.math-block .katex-display { margin: 0.4em 0; }
+.math-inline .katex, .math-block .katex { font-size: 1.08em; color: #f2f2f2; }
+.typing > div:last-child > .math-block::after { content: none; }
+
+/* Typing caret after the last line of an answer that is still being typed out. */
+.typing > div:last-child > p:last-child::after { content: ""; display: inline-block; width: 0.5em; height: 1.05em; margin-left: 3px; vertical-align: -0.15em; background: #fff; border-radius: 2px; animation: blink 1s step-end infinite; }
+.typing > div:last-child > ol > li:last-child > span:last-child::after { content: ""; display: inline-block; width: 0.5em; height: 1.05em; margin-left: 3px; vertical-align: -0.15em; background: #fff; border-radius: 2px; animation: blink 1s step-end infinite; }
+
+/* Thinking shimmer on text: a white highlight sweeping across muted text. */
+@keyframes sweep { from { background-position: 150% 0; } to { background-position: -50% 0; } }
+.text-sweep { background: linear-gradient(90deg, #7d8187 0%, #7d8187 40%, #ffffff 50%, #7d8187 60%, #7d8187 100%); background-size: 250% 100%;
+  -webkit-background-clip: text; background-clip: text; color: transparent; animation: sweep 2.2s linear infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-blink, .animate-pulse-dot, .animate-spin-slow, .animate-twinkle, .text-sweep { animation: none; }
+  .text-sweep { color: #7d8187; background: none; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}

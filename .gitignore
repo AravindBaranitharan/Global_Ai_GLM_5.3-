@@ -1,0 +1,20 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+data/
+models/
+node_modules/
+ui/dist/
+.DS_Store
+
+# test and build output
+ui/test-results/
+ui/playwright-report/
+.vitest/
+*.sqlite
+*.log
+
+# talk deck: kept locally, not published
+presentation/

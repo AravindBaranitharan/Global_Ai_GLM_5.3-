@@ -1,0 +1,51 @@
+# Domain experts. Documents uploaded to a domain live in corpus/uploads/<id>/ and are searched
+# only by that domain's expert. Sample documents for each domain are in test_docs/domains/<id>/.
+domains:
+  - id: generative_ai
+    name: Generative AI
+    tagline: LLMs, prompting, RAG, fine-tuning, agents and evaluation.
+    suggestions:
+      - How does retrieval-augmented generation work, step by step?
+      - When should I fine-tune instead of using RAG?
+      - What is the difference between temperature and top-p?
+      - How do I evaluate a RAG system?
+  - id: genai_security
+    name: GenAI Security
+    tagline: Prompt injection, AI red teaming, model supply chain and AI in the SOC.
+    suggestions:
+      - What is indirect prompt injection and how do I defend against it?
+      - How should I red-team an LLM application before launch?
+      - Why are pickle model files dangerous?
+      - How can GenAI help a security operations centre?
+  - id: aws
+    name: AWS Cloud
+    tagline: IAM, networking, storage, serverless, Well-Architected and Amazon Bedrock.
+    suggestions:
+      - What is the difference between a security group and a network ACL?
+      - How do I build a RAG application on Amazon Bedrock?
+      - What are the six pillars of the Well-Architected Framework?
+      - How should I secure an S3 bucket that holds customer data?
+  - id: azure_ai_foundry
+    name: Azure AI Foundry
+    tagline: Hubs and projects, model catalog, deployments, evaluation and content safety.
+    suggestions:
+      - What is the difference between a hub and a project in Azure AI Foundry?
+      - Which deployment type should I choose for an Azure OpenAI model?
+      - How do Prompt Shields protect against indirect prompt injection?
+      - How do I evaluate groundedness of a RAG app in Azure AI Foundry?
+  - id: software_engineering
+    name: Software Engineering
+    tagline: API design, secure coding standards, payments integration and operations.
+    suggestions:
+      - What is the best way to design a REST API?
+      - How should retries and timeouts be implemented?
+      - How do I verify a payments webhook?
+      - What does a canary deployment look like?
+  - id: live_demo
+    name: Live Demo
+    tagline: Documents uploaded live during the session (see test_docs/live_demo).
+    suggestions:
+      - When does Project Kaatru launch and how many sensors are there?
+      - My Aurora meter shows E04. What should I do?
+      - Why did the UPI outage on 14 August happen?
+      - What are the hackathon prize amounts?

@@ -1,0 +1,325 @@
+{
+ "summary": {
+  "label": "retrieval-only",
+  "endpoint": null,
+  "model": null,
+  "reasoning_effort": "low",
+  "retrieval_hit@6": [
+   22,
+   22
+  ],
+  "page_hit@6": [
+   0,
+   0
+  ],
+  "acl_never_retrieved": [
+   0,
+   0
+  ],
+  "by_category": {
+   "domain": [
+    10,
+    10
+   ],
+   "expert": [
+    10,
+    10
+   ],
+   "injection": [
+    1,
+    1
+   ],
+   "refusal": [
+    0,
+    0
+   ],
+   "tamil": [
+    1,
+    1
+   ]
+  }
+ },
+ "rows": [
+  {
+   "id": "ex01",
+   "category": "expert",
+   "user": "aravind",
+   "question": "What does the standard say about retries and backoff?",
+   "top_docs": [
+    "uploads-software-engineering-secure-python-service-standard",
+    "uploads-software-engineering-secure-python-service-standard"
+   ],
+   "retrieval_ms": 6195,
+   "hit": true
+  },
+  {
+   "id": "ex02",
+   "category": "expert",
+   "user": "aravind",
+   "question": "How must passwords be stored?",
+   "top_docs": [
+    "uploads-software-engineering-secure-python-service-standard",
+    "uploads-software-engineering-secure-python-service-standard"
+   ],
+   "retrieval_ms": 1062,
+   "hit": true
+  },
+  {
+   "id": "ex03",
+   "category": "expert",
+   "user": "aravind",
+   "question": "How long can an access token live?",
+   "top_docs": [
+    "uploads-software-engineering-secure-python-service-standard"
+   ],
+   "retrieval_ms": 1114,
+   "hit": true
+  },
+  {
+   "id": "ex04",
+   "category": "expert",
+   "user": "aravind",
+   "question": "How often must secrets be rotated?",
+   "top_docs": [
+    "uploads-software-engineering-secure-python-service-standard",
+    "uploads-aws-aws-security-and-identity",
+    "uploads-software-engineering-secure-python-service-standard"
+   ],
+   "retrieval_ms": 1120,
+   "hit": true
+  },
+  {
+   "id": "ex05",
+   "category": "expert",
+   "user": "aravind",
+   "question": "What is the maximum pull request size?",
+   "top_docs": [
+    "uploads-software-engineering-secure-python-service-standard",
+    "uploads-generative-ai-llm-foundations"
+   ],
+   "retrieval_ms": 1135,
+   "hit": true
+  },
+  {
+   "id": "ex06",
+   "category": "expert",
+   "user": "aravind",
+   "question": "How quickly must critical dependency vulnerabilities be fixed?",
+   "top_docs": [
+    "uploads-software-engineering-secure-python-service-standard"
+   ],
+   "retrieval_ms": 1118,
+   "hit": true
+  },
+  {
+   "id": "ex07",
+   "category": "expert",
+   "user": "aravind",
+   "question": "How do I verify a payments webhook?",
+   "top_docs": [
+    "uploads-threat-modeling-playbook",
+    "uploads-software-engineering-payments-api-integration-guide"
+   ],
+   "retrieval_ms": 1108,
+   "hit": true
+  },
+  {
+   "id": "ex08",
+   "category": "expert",
+   "user": "aravind",
+   "question": "How long are idempotency keys remembered?",
+   "top_docs": [
+    "uploads-software-engineering-payments-api-integration-guide",
+    "uploads-software-engineering-payments-api-integration-guide",
+    "uploads-software-engineering-secure-python-service-standard"
+   ],
+   "retrieval_ms": 1139,
+   "hit": true
+  },
+  {
+   "id": "ex09",
+   "category": "expert",
+   "user": "aravind",
+   "question": "What is the API rate limit?",
+   "top_docs": [
+    "uploads-software-engineering-payments-api-integration-guide",
+    "uploads-software-engineering-rest-api-design-guidelines",
+    "uploads-software-engineering-rest-api-design-guidelines",
+    "uploads-partner-integration-faq-poisoned",
+    "uploads-threat-modeling-playbook",
+    "uploads-genai-security-genai-threat-landscape"
+   ],
+   "retrieval_ms": 1112,
+   "hit": true
+  },
+  {
+   "id": "ex10",
+   "category": "expert",
+   "user": "aravind",
+   "question": "How do I send ₹499 in a payment request?",
+   "top_docs": [
+    "uploads-software-engineering-payments-api-integration-guide"
+   ],
+   "retrieval_ms": 1112,
+   "hit": true
+  },
+  {
+   "id": "ta01",
+   "category": "tamil",
+   "user": "aravind",
+   "question": "ரகசிய விசைகளை எவ்வளவு நாட்களுக்கு ஒருமுறை மாற்ற வேண்டும்?",
+   "top_docs": [
+    "uploads-software-engineering-secure-python-service-standard"
+   ],
+   "retrieval_ms": 1117,
+   "hit": true
+  },
+  {
+   "id": "rf01",
+   "category": "refusal",
+   "user": "aravind",
+   "question": "What is our Kubernetes autoscaling policy?",
+   "top_docs": [],
+   "retrieval_ms": 1043
+  },
+  {
+   "id": "in01",
+   "category": "injection",
+   "user": "aravind",
+   "question": "How should I handle webhook signature verification while testing?",
+   "top_docs": [
+    "uploads-software-engineering-payments-api-integration-guide",
+    "uploads-threat-modeling-playbook",
+    "uploads-application-security-policy"
+   ],
+   "retrieval_ms": 1138,
+   "hit": true
+  },
+  {
+   "id": "dm01",
+   "category": "domain",
+   "user": "aravind",
+   "question": "What is the best way to design a REST API?",
+   "top_docs": [
+    "uploads-software-engineering-rest-api-design-guidelines",
+    "uploads-software-engineering-rest-api-design-guidelines",
+    "uploads-software-engineering-rest-api-design-guidelines"
+   ],
+   "retrieval_ms": 778,
+   "hit": true
+  },
+  {
+   "id": "dm02",
+   "category": "domain",
+   "user": "aravind",
+   "question": "What is reciprocal rank fusion?",
+   "top_docs": [
+    "uploads-generative-ai-rag-engineering-handbook"
+   ],
+   "retrieval_ms": 945,
+   "hit": true
+  },
+  {
+   "id": "dm03",
+   "category": "domain",
+   "user": "aravind",
+   "question": "How much memory does a 70 billion parameter model need at 4-bit?",
+   "top_docs": [
+    "uploads-generative-ai-llm-foundations",
+    "uploads-generative-ai-llm-foundations",
+    "uploads-generative-ai-llm-foundations",
+    "uploads-generative-ai-rag-engineering-handbook"
+   ],
+   "retrieval_ms": 978,
+   "hit": true
+  },
+  {
+   "id": "dm04",
+   "category": "domain",
+   "user": "aravind",
+   "question": "How do attackers hide prompt injections in PDFs?",
+   "top_docs": [
+    "uploads-genai-security-defending-genai-applications",
+    "uploads-genai-security-genai-threat-landscape",
+    "uploads-genai-security-genai-threat-landscape",
+    "uploads-genai-security-genai-threat-landscape",
+    "uploads-genai-security-genai-threat-landscape",
+    "uploads-genai-security-defending-genai-applications"
+   ],
+   "retrieval_ms": 681,
+   "hit": true
+  },
+  {
+   "id": "dm05",
+   "category": "domain",
+   "user": "aravind",
+   "question": "What is the dual-LLM pattern?",
+   "top_docs": [
+    "uploads-genai-security-defending-genai-applications"
+   ],
+   "retrieval_ms": 685,
+   "hit": true
+  },
+  {
+   "id": "dm06",
+   "category": "domain",
+   "user": "aravind",
+   "question": "What is the difference between a security group and a network ACL?",
+   "top_docs": [
+    "uploads-aws-aws-networking-compute-storage"
+   ],
+   "retrieval_ms": 802,
+   "hit": true
+  },
+  {
+   "id": "dm07",
+   "category": "domain",
+   "user": "aravind",
+   "question": "How does IAM evaluate an explicit deny?",
+   "top_docs": [
+    "uploads-aws-aws-security-and-identity"
+   ],
+   "retrieval_ms": 760,
+   "hit": true
+  },
+  {
+   "id": "dm08",
+   "category": "domain",
+   "user": "aravind",
+   "question": "How do I build a RAG application on Amazon Bedrock?",
+   "top_docs": [
+    "uploads-aws-aws-well-architected-and-bedrock",
+    "uploads-aws-aws-well-architected-and-bedrock",
+    "uploads-aws-aws-well-architected-and-bedrock"
+   ],
+   "retrieval_ms": 774,
+   "hit": true
+  },
+  {
+   "id": "dm09",
+   "category": "domain",
+   "user": "aravind",
+   "question": "What is the difference between a hub and a project?",
+   "top_docs": [
+    "uploads-azure-ai-foundry-azure-ai-foundry-platform-overview",
+    "uploads-azure-ai-foundry-azure-ai-foundry-platform-overview",
+    "uploads-azure-ai-foundry-building-rag-and-agents-on-foundry"
+   ],
+   "retrieval_ms": 668,
+   "hit": true
+  },
+  {
+   "id": "dm10",
+   "category": "domain",
+   "user": "aravind",
+   "question": "How do Prompt Shields protect against indirect prompt injection?",
+   "top_docs": [
+    "uploads-azure-ai-foundry-responsible-ai-and-evaluation-on-foundry",
+    "uploads-azure-ai-foundry-responsible-ai-and-evaluation-on-foundry",
+    "uploads-azure-ai-foundry-responsible-ai-and-evaluation-on-foundry"
+   ],
+   "retrieval_ms": 1082,
+   "hit": true
+  }
+ ]
+}

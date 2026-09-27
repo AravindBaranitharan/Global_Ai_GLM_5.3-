@@ -1,0 +1,11 @@
+# Phase 3-5: Qdrant only. API/UI/embedder services are added in Phase 6 for the GPU box.
+services:
+  qdrant:
+    image: qdrant/qdrant:v1.12.4
+    ports:
+      - "6333:6333"
+    volumes:
+      - ./data/qdrant:/qdrant/storage
+    environment:
+      QDRANT__TELEMETRY_DISABLED: "true"
+    restart: unless-stopped

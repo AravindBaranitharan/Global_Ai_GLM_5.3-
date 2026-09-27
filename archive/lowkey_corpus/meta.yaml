@@ -1,0 +1,20 @@
+# Display titles for documents (corpus-relative path -> title). Files not listed get a title from their name.
+titles:
+  hr/leave_policy.pdf: Leave Policy
+  hr/travel_policy.pdf: Travel and Expense Policy
+  hr/salary_bands_fy2026_27.pdf: Salary Bands FY 2026-27
+  hr/offer_letter_template_scan.jpg: Offer Letter Template (scan)
+  finance/invoice_oct2025_hosur_scan.jpg: Sri Murugan Packaging Invoice, Oct 2025 (scan)
+  finance/invoice_sep2025_kovai_scan.jpg: Kovai Cloud Services Invoice, Sep 2025 (scan)
+  finance/q3_fy26_summary.pdf: Q3 FY26 Business Summary
+  engineering/architecture_diagram.png: Shipment Platform Architecture
+  engineering/whiteboard_sprint42.jpg: Sprint 42 Whiteboard (photo)
+  engineering/postmortem_inc_2025_118.pdf: Postmortem INC-2025-118
+  engineering/oncall_runbook.pdf: On-call Runbook
+  legal/cloudnest_msa.pdf: CloudNest Master Services Agreement
+  tamil/pongal_holiday_circular.pdf: பொங்கல் விடுமுறை சுற்றறிக்கை
+  tamil/office_hours_circular.pdf: புதிய அலுவலக நேரம் சுற்றறிக்கை
+  tamil/hosur_warehouse_safety_notice_scan.jpg: ஓசூர் கிடங்கு பாதுகாப்பு அறிவிப்பு (scan)
+  tamil/festival_advance_notice_scan.jpg: பண்டிகை முன்பணம் அறிவிப்பு (scan)
+  poisoned/it_helpdesk_faq.pdf: IT Helpdesk FAQ
+  general/ai_governance_security_agents_mcp.pdf: AI Governance, Security, Agents and MCP
